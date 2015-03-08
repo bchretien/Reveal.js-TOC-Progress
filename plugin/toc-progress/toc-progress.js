@@ -16,6 +16,7 @@ var toc_progress=
 	toc_progress_on:false,
 	reduceorscroll:'scroll',
 	background:'rgba(0,0,127,0.1)',
+	currentstyle:'font-weight: bold; font-size:120%; color: red;'
 };
 
 /* Function to obtain all child elements with any of the indicated tags (from http://www.quirksmode.org/dom/getElementsByTagNames.html) */
@@ -129,8 +130,8 @@ toc_progress.create=function()
 				a_element.setAttribute('href','#/'+main_sections_index.toString());
 				a_element.appendChild(document.createTextNode(title_element.textContent));
 				li_element.appendChild(a_element);
-				style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
-				style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
+				style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {'+this.currentstyle+'}\n';
+				style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {'+this.currentstyle+'}\n';
 				style_node.textContent=style_node.textContent+'html:not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
 				main_title_set = true;
 			}
@@ -185,8 +186,8 @@ toc_progress.create=function()
 						a_element.setAttribute('href','#/'+main_sections_index.toString());
 						a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
-						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {'+this.currentstyle+'}\n';
+						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {'+this.currentstyle+'}\n';
 						style_node.textContent=style_node.textContent+'html:not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
 					}
 					else
@@ -206,7 +207,7 @@ toc_progress.create=function()
 						a_element.setAttribute('href','#/'+main_sections_index.toString()+'/'+secondary_sections_index.toString());
 						a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {font-weight: bold;}\n';
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {'+this.currentstyle+'}\n';
 					};
 				}
 				else if (title_element==null)
