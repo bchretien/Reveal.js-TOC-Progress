@@ -391,7 +391,6 @@ toc_progress.initialize=function(reducescroll,background,currentstyle)
 	};
 
 	// Capture 'slidechanged' event to reduce or scroll the elements in the TOC-Progress footer if necessary
-
-	Reveal.addEventListener('slidechanged',function(event){toc_progress.reduceorscrollifnecessary(this.reduceorscroll)});
+	Reveal.addEventListener('slidechanged',function(event){if (this.reduceorscroll !== undefined) {toc_progress.reduceorscrollifnecessary(this.reduceorscroll)}});
 };
 
