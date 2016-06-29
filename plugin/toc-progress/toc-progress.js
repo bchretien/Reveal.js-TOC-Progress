@@ -359,7 +359,7 @@ toc_progress.reduceorscrollelementifnecessary=function(element)
 
 /* Method to initialize the TOC-Progress footer */
 
-toc_progress.initialize=function(reducescroll,background)
+toc_progress.initialize=function(reducescroll,background,currentstyle)
 {
 
 	// Link to the TOC-Progress CSS
@@ -374,6 +374,7 @@ toc_progress.initialize=function(reducescroll,background)
 
 	this.reduceorscroll=reducescroll || 'scroll';
 	this.background=background || 'rgba(0,0,127,0.1)';
+	this.currentstyle=currentstyle || 'font-weight: bold; font-size:120%; color: red;';
 
 	// Capture 'q' key to toggle the display of the TOC-Progress footer
 	mappings = Reveal.getConfig().keyboard;
